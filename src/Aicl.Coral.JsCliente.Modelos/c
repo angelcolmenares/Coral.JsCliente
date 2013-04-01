@@ -1,0 +1,50 @@
+/opt/mono/bin/dmcs  /noconfig  -nostdlib \
+"/out:bin/Debug/Aicl.Coral.JsCliente.Modelos.dll" \
+"/define:SALTARELLE" \
+"/debug" \
+"/r:../../lib/mscorlib.dll" \
+/t:library \
+"Empresa.cs" \
+"EmpresaCcf.cs" \
+"Administradora.cs" \
+"Candidato.cs" \
+"Sucursal.cs" \
+"UsuarioEmpresa.cs" \
+"UsuarioSucursal.cs" \
+"Actividad.cs" \
+"ActividadClase.cs" \
+"ClaseCliente.cs" \
+"Grupo.cs" \
+"GrupoActividad.cs" \
+"GrupoUsuario.cs" \
+"TipoActividad.cs" \
+"Departamento.cs" \
+"Municipio.cs" \
+"Estado.cs" \
+"EstadoCivil.cs" \
+"NivelAcademico.cs" \
+"Pais.cs" \
+"Profesion.cs" \
+"Sanguineo.cs" \
+"ServicioAdministradora.cs" \
+"TipoDocumento.cs" \
+"EmpresaCreate.cs" \
+"EmpresaRead.cs" \
+"EmpresaUpdate.cs" \
+"EmpresaDestroy.cs" \
+"UserLogin.cs" \
+"UserLogout.cs" \
+"AdminLogin.cs" \
+"AdminLogout.cs" \
+"UserLoginResponse.cs" \
+"AdminLoginResponse.cs" \
+"Menu.cs" \
+"Item.cs" \
+"SucursalAutorizada.cs" \
+"CentroSucursal.cs" \
+"Centro.cs" \
+"UsuarioCentroSucursal.cs"
+				
+cp bin/Debug/Aicl.Coral.JsCliente.Modelos.dll ../../lib/
+echo "Aicl.Coral.JsCliente.Modelos.dll" listo
+./j
