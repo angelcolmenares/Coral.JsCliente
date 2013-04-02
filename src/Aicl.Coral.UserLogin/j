@@ -1,0 +1,18 @@
+/opt/mono/bin/sc  \
+"/outscript:bin/Debug/Aicl.Coral.App.js" \
+"/define:JS" \
+"/debug" \
+"/r:../../lib/Saltarelle.Linq.dll" \
+"/r:../../lib/Saltarelle.jQuery.dll" \
+"/r:../../lib/Saltarelle.Web.dll" \
+"/r:../../lib/mscorlib.dll" \
+"/r:../../lib/Cayita.Javascript.dll" \
+"/r:../../lib/Aicl.Coral.JsCliente.Modelos.dll" \
+/t:library \
+"LoginForm.cs" \
+"App.cs" \
+
+cp bin/Debug/Aicl.Coral.App.js ../../../Servidor/src/Aicl.Coral.HostWeb/js/
+
+echo "ready Aicl.Coral.App.js"
+

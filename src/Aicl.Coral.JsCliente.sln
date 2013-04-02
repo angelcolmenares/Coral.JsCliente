@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aicl.Coral.Cliente.Generado
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aicl.Coral.JsCliente.Modelos", "Aicl.Coral.JsCliente.Modelos\Aicl.Coral.JsCliente.Modelos.csproj", "{0969EF5B-158E-40BA-A0EE-9C92D10D97BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aicl.Coral.UserLogin", "Aicl.Coral.UserLogin\Aicl.Coral.UserLogin.csproj", "{AD7D83A7-BB0B-4570-B607-C9F0D2344601}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -15,6 +17,10 @@ Global
 		{0969EF5B-158E-40BA-A0EE-9C92D10D97BF}.Debug|x86.Build.0 = Debug|Any CPU
 		{0969EF5B-158E-40BA-A0EE-9C92D10D97BF}.Release|x86.ActiveCfg = Release|Any CPU
 		{0969EF5B-158E-40BA-A0EE-9C92D10D97BF}.Release|x86.Build.0 = Release|Any CPU
+		{AD7D83A7-BB0B-4570-B607-C9F0D2344601}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AD7D83A7-BB0B-4570-B607-C9F0D2344601}.Debug|x86.Build.0 = Debug|Any CPU
+		{AD7D83A7-BB0B-4570-B607-C9F0D2344601}.Release|x86.ActiveCfg = Release|Any CPU
+		{AD7D83A7-BB0B-4570-B607-C9F0D2344601}.Release|x86.Build.0 = Release|Any CPU
 		{D70B6123-DB65-4287-B694-0934E778CA8A}.Debug|x86.ActiveCfg = Debug|x86
 		{D70B6123-DB65-4287-B694-0934E778CA8A}.Debug|x86.Build.0 = Debug|x86
 		{D70B6123-DB65-4287-B694-0934E778CA8A}.Release|x86.ActiveCfg = Release|x86

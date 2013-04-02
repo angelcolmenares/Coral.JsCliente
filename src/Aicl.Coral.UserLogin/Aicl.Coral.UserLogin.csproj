@@ -5,11 +5,10 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0969EF5B-158E-40BA-A0EE-9C92D10D97BF}</ProjectGuid>
+    <ProjectGuid>{AD7D83A7-BB0B-4570-B607-C9F0D2344601}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Aicl.Coral.JsCliente.Modelos</RootNamespace>
-    <AssemblyName>Aicl.Coral.JsCliente.Modelos</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <RootNamespace>Aicl.Coral.UserLogin</RootNamespace>
+    <AssemblyName>Aicl.Coral.UserLogin</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>
@@ -22,7 +21,7 @@
     <ConsolePause>False</ConsolePause>
     <CustomCommands>
       <CustomCommands>
-        <Command type="Build" command="./c" externalConsole="True" pauseExternalConsole="True" />
+        <Command type="Build" command="./j" externalConsole="True" pauseExternalConsole="True" />
       </CustomCommands>
     </CustomCommands>
   </PropertyGroup>
@@ -35,24 +34,32 @@
     <ConsolePause>False</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="mscorlib">
-      <HintPath>..\..\lib\mscorlib.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="UserLoginResponse.cs" />
-    <Compile Include="Empresa.cs" />
-    <Compile Include="Centro.cs" />
-    <Compile Include="Sucursal.cs" />
-    <Compile Include="Menu.cs" />
-    <Compile Include="Item.cs" />
-    <Compile Include="SucursalAutorizada.cs" />
-    <Compile Include="UserLogin.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="App.cs" />
+    <Compile Include="LoginForm.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <None Include="c" />
+    <Reference Include="Aicl.Coral.JsCliente.Modelos">
+      <HintPath>..\..\lib\Aicl.Coral.JsCliente.Modelos.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib">
+      <HintPath>..\..\lib\mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Saltarelle.jQuery">
+      <HintPath>..\..\lib\Saltarelle.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Saltarelle.Linq">
+      <HintPath>..\..\lib\Saltarelle.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Saltarelle.Web">
+      <HintPath>..\..\lib\Saltarelle.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Cayita.Javascript">
+      <HintPath>..\..\lib\Cayita.Javascript.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
     <None Include="j" />
   </ItemGroup>
 </Project>
