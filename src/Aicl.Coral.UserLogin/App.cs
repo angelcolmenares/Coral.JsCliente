@@ -11,6 +11,9 @@ namespace Aicl.Coral.UserLogin
 	[IgnoreNamespace]
 	public class App
 	{
+		Div Widgets { get; set;}
+		Element TituloModulo { get; set; }
+
 		Div WorkArea { get; set;}
 		Div ItemArea { get; set;}
 
@@ -60,7 +63,9 @@ namespace Aicl.Coral.UserLogin
 												});
 												a.OnClick(ev=>{
 													ev.PreventDefault();
-													Window.Alert(item.Modulo);
+													ItemArea.Hide();
+													Widgets.Show();
+													TituloModulo.InnerHTML=item.Titulo.Replace("<br>","");
 												});
 												new Span(a, sp=>{
 													sp.ClassName="shortcut-label";
@@ -86,6 +91,35 @@ namespace Aicl.Coral.UserLogin
 							i.AppendChild(m);
 						});
 					});
+
+					new Div(row, div=>{
+						div.ClassName="span10";
+						Widgets= new Div(div, i=>{
+							i.ClassName="widget stacked";
+							i.Hide();
+							new Div(i, h=>{
+								h.ClassName="widget-header";
+								new Icon(h, icon=>{ 
+									icon.ClassName="icon-remove-circle";
+									icon.OnClick(evt=>{
+										evt.PreventDefault();
+										Widgets.Hide();
+										WorkArea.Empty();
+										ItemArea.Show();
+									}); 
+
+								});
+								TituloModulo = Document.CreateElement("h3");
+								TituloModulo.Text("Titulo del modulo");
+								h.AppendChild(TituloModulo);
+							});
+							WorkArea= new Div(i, ct=>{
+								ct.ClassName="widget-content";
+							});
+						});
+					});
+
+
 				});
 			}).AppendTo(Document.Body);
 		}
