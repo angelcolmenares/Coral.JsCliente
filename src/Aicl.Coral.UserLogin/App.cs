@@ -11,8 +11,10 @@ namespace Aicl.Coral.UserLogin
 	[IgnoreNamespace]
 	public class App
 	{
-		Div Widgets { get; set;}
+		Div ContenedorItemArea { get; set;}
+		Div ContenedorWorkArea { get; set;}
 		Element TituloModulo { get; set; }
+
 
 		Div WorkArea { get; set;}
 		Div ItemArea { get; set;}
@@ -52,6 +54,8 @@ namespace Aicl.Coral.UserLogin
 									anchor.Text(menu.Titulo);
 									anchor.OnClick(e=>{
 										e.PreventDefault();
+										ContenedorWorkArea.Hide();
+										ContenedorItemArea.Show();
 										ItemArea.Empty();
 										var div = Document.CreateDocumentFragment();
 										foreach(var item in menu.Items){
@@ -63,8 +67,8 @@ namespace Aicl.Coral.UserLogin
 												});
 												a.OnClick(ev=>{
 													ev.PreventDefault();
-													ItemArea.Hide();
-													Widgets.Show();
+													ContenedorItemArea.Hide();
+													ContenedorWorkArea.Show();
 													TituloModulo.InnerHTML=item.Titulo.Replace("<br>","");
 												});
 												new Span(a, sp=>{
@@ -81,7 +85,7 @@ namespace Aicl.Coral.UserLogin
 						});
 					});
 					
-					new Div(row,  div=>{
+					ContenedorItemArea= new Div(row,  div=>{
 						div.ClassName="span10";
 						div.Append("<style>img {height: 60px;} .shortcuts .shortcut {height: 160px;}</style>");
 						ItemArea= new Div(div, i=>{
@@ -92,20 +96,20 @@ namespace Aicl.Coral.UserLogin
 						});
 					});
 
-					new Div(row, div=>{
+					ContenedorWorkArea = new Div(row, div=>{
 						div.ClassName="span10";
-						Widgets= new Div(div, i=>{
+						div.Hide();
+						new Div(div, i=>{
 							i.ClassName="widget stacked";
-							i.Hide();
 							new Div(i, h=>{
 								h.ClassName="widget-header";
 								new Icon(h, icon=>{ 
 									icon.ClassName="icon-remove-circle";
 									icon.OnClick(evt=>{
 										evt.PreventDefault();
-										Widgets.Hide();
+										ContenedorWorkArea.Hide();
 										WorkArea.Empty();
-										ItemArea.Show();
+										ContenedorItemArea.Show();
 									}); 
 
 								});
