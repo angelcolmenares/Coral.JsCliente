@@ -10,7 +10,8 @@ namespace Aicl.Coral.Modelos
 		public UserLoginResponse ()
 		{
 		}
-
+		public string DisplayName { get; set; }
+		public string Email { get; set; }
 		public Aicl.Coral.Modelos.Empresa Empresa { get; set; }
 		public System.Collections.Generic.List<Aicl.Coral.Modelos.Centro> Centros { get; set; }
 		public System.Collections.Generic.List<Aicl.Coral.Modelos.SucursalAutorizada> SucursalesAutorizadas { get; set; }

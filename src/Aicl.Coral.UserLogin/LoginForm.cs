@@ -17,9 +17,7 @@ namespace Aicl.Coral.UserLogin
 			Parent= parent;
 
 		}
-		
-		public UserLoginResponse LoginResponse {get; private set;}
-		
+						
 		public Element Parent {get;private set;}
 
 		public Action<UserLoginResponse,LoginForm> OnLogin {get;set;}
@@ -73,25 +71,23 @@ namespace Aicl.Coral.UserLogin
 									
 									var req=jQuery.PostRequest<UserLoginResponse>(f.Action, f.Serialize(), cb=>{},"json");
 									req.Done(d=>{
-											LoginResponse= d;
-											Cayita.Javascript.Firebug.Console.Log(d);
-											if(OnLogin!=null) OnLogin(d,this);
+										Cayita.Javascript.Firebug.Console.Log(d);
+										f.Clear();
+										if(OnLogin!=null) OnLogin(d,this);
 											
 									});
-									req.Fail(e=> { Cayita.Javascript.Firebug.Console.Log("fail ",req); });
-										//.Error((request,  textStatus,  error)=>{
-										//		Div.CreateAlertErrorBefore(fe.Elements[0],textStatus+": "
-										//		                           +( request.StatusText.StartsWith("ValidationException")?
-										//		  "Usario/clave no validos":
-										//		  request.StatusText));
-										//	})
+									req.Fail(e=> {
+										Cayita.Javascript.Firebug.Console.Log("fail :",req); 
+										Div.CreateAlertErrorBefore(fe.Elements[0], req.Status.ToString()+":"+
+										                           (req.StatusText.StartsWith("ValidationException")?
+										                           "NIT/Usario/clave no validos":
+										                           req.StatusText)); 
+									});
 									req.Always(a=>{
 												bt.ResetLoadingText();
 									})	;
-									
-									
+										
 								});
-
 							
 							fe.Validate(vo);			
 							
