@@ -80,7 +80,7 @@ namespace Aicl.Coral.UserLogin
 										Cayita.Javascript.Firebug.Console.Log("fail :",req); 
 										Div.CreateAlertErrorBefore(fe.Elements[0], req.Status.ToString()+":"+
 										                           (req.StatusText.StartsWith("ValidationException")?
-										                           "NIT/Usario/clave no validos":
+										                           "Usario/clave no validos":
 										                           req.StatusText)); 
 									});
 									req.Always(a=>{

@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using Aicl.Coral.Modelos;
 using Cayita.Javascript.UI;
 using Cayita.Javascript;
+using System.Collections.Generic;
 
 namespace Aicl.Coral.UserLogin
 {
@@ -18,6 +19,8 @@ namespace Aicl.Coral.UserLogin
 
 		Div WorkArea { get; set;}
 		Div ItemArea { get; set;}
+
+		List<string>  modules = new List<string>();
 
 		public App ()
 		{
@@ -67,9 +70,23 @@ namespace Aicl.Coral.UserLogin
 												});
 												a.OnClick(ev=>{
 													ev.PreventDefault();
-													ContenedorItemArea.Hide();
-													ContenedorWorkArea.Show();
-													TituloModulo.InnerHTML=item.Titulo.Replace("<br>","");
+													if(modules.Contains(item.Modulo))
+													{
+														ExecuteModule(item);
+													}
+													else
+													{
+														var rq=jQuery.GetScript("modulos/"+item.Modulo+".js");
+														rq.Done(cb=>{
+															modules.Add(item.Modulo);
+															ExecuteModule(item);
+														});
+														rq.Fail(cb=>{
+															Cayita.Javascript.Firebug.Console.Log("fallo al cargar "+ item.Modulo+" :" + rq.StatusText + " " , rq); 
+															Bootbox.Alert("fallo al cargar "+ item.Modulo+" :" + rq.StatusText);
+														});
+													}
+
 												});
 												new Span(a, sp=>{
 													sp.ClassName="shortcut-label";
@@ -128,10 +145,17 @@ namespace Aicl.Coral.UserLogin
 			}).AppendTo(Document.Body);
 		}
 
-		[InlineCode("MainModule.execute({parent})")]
-		void ExecuteModule(Element parent){}
+		[InlineCode("window[{className}]['execute']({parent})")]
+		void ExecuteModule(Element parent, string className){}
 
+		void ExecuteModule(Item item)
+		{
+			ContenedorItemArea.Hide();
+			ContenedorWorkArea.Show();
+			TituloModulo.InnerHTML=item.Titulo.Replace("<br>","");
+			ExecuteModule (WorkArea.Element (), item.Modulo.Replace(".",""));
 
+		}
 	}
 }
 

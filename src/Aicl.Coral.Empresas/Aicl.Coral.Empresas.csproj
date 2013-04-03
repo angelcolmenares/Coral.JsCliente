@@ -5,10 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{AD7D83A7-BB0B-4570-B607-C9F0D2344601}</ProjectGuid>
+    <ProjectGuid>{211224D4-5E6D-4AF2-B695-3BD3B5DF9E8C}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Aicl.Coral.UserLogin</RootNamespace>
-    <AssemblyName>Aicl.Coral.UserLogin</AssemblyName>
+    <RootNamespace>Aicl.Coral.Administracion</RootNamespace>
+    <AssemblyName>Aicl.Coral.Empresas</AssemblyName>
+    <Description />
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -36,13 +37,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="App.cs" />
-    <Compile Include="LoginForm.cs" />
+    <Compile Include="Empresas.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Reference Include="Aicl.Coral.JsCliente.Modelos">
       <HintPath>..\..\lib\Aicl.Coral.JsCliente.Modelos.dll</HintPath>
+    </Reference>
+    <Reference Include="Cayita.Javascript">
+      <HintPath>..\..\lib\Cayita.Javascript.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>..\..\lib\mscorlib.dll</HintPath>
@@ -55,9 +58,6 @@
     </Reference>
     <Reference Include="Saltarelle.Web">
       <HintPath>..\..\lib\Saltarelle.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="Cayita.Javascript">
-      <HintPath>..\..\lib\Cayita.Javascript.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

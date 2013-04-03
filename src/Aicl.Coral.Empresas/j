@@ -1,0 +1,18 @@
+/opt/mono/bin/sc  \
+"/outscript:bin/Debug/Administracion.Empresas.js" \
+"/define:JS" \
+"/debug" \
+"/r:../../lib/Saltarelle.Linq.dll" \
+"/r:../../lib/Saltarelle.jQuery.dll" \
+"/r:../../lib/Saltarelle.Web.dll" \
+"/r:../../lib/mscorlib.dll" \
+"/r:../../lib/Cayita.Javascript.dll" \
+"/r:../../lib/Aicl.Coral.JsCliente.Modelos.dll" \
+/t:library \
+"Empresas.cs" \
+
+
+cp bin/Debug/Administracion.Empresas.js ../../../Servidor/src/Aicl.Coral.HostWeb/modulos/
+
+echo "ready Administracion.Empresas.js"
+
