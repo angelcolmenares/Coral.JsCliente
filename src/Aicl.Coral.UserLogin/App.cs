@@ -63,7 +63,7 @@ namespace Aicl.Coral.UserLogin
 										var div = Document.CreateDocumentFragment();
 										foreach(var item in menu.Items){
 											new Anchor(null, a=>{
-												a.ClassName="shortcut";
+												a.ClassName="c-icon";
 												new Image(a, img=>{
 													img.Src=item.Icono;
 													img.ClassName="img-rounded";
@@ -89,7 +89,7 @@ namespace Aicl.Coral.UserLogin
 
 												});
 												new Span(a, sp=>{
-													sp.ClassName="shortcut-label";
+													sp.ClassName="c-icon-label";
 													sp.InnerHTML=item.Titulo;
 												});
 								
@@ -104,9 +104,9 @@ namespace Aicl.Coral.UserLogin
 					
 					ContenedorItemArea= new Div(row,  div=>{
 						div.ClassName="span10";
-						div.Append("<style>img {height: 60px;} .shortcuts .shortcut {height: 160px;}</style>");
+						div.Append("<style>img {height: 60px;}  .c-icon {height: 160px;}</style>");
 						ItemArea= new Div(div, i=>{
-							i.ClassName="shortcuts";
+							i.ClassName="c-icons";
 							var m = Document.CreateElement("h3");
 							m.Text("Bienvenido " + lr.DisplayName);
 							i.AppendChild(m);
@@ -117,15 +117,14 @@ namespace Aicl.Coral.UserLogin
 						div.ClassName="span10";
 						div.Hide();
 						new Div(div, i=>{
-							i.ClassName="widget stacked";
+							i.ClassName="c-panel";
 							new Div(i, h=>{
-								h.ClassName="widget-header";
+								h.ClassName="c-panel-header";
 								new Icon(h, icon=>{ 
 									icon.ClassName="icon-remove-circle";
 									icon.OnClick(evt=>{
 										evt.PreventDefault();
 										ContenedorWorkArea.Hide();
-										WorkArea.Empty();
 										ContenedorItemArea.Show();
 									}); 
 
@@ -135,7 +134,7 @@ namespace Aicl.Coral.UserLogin
 								h.AppendChild(TituloModulo);
 							});
 							WorkArea= new Div(i, ct=>{
-								ct.ClassName="widget-content";
+								ct.ClassName="c-panel-content";
 							});
 						});
 					});
@@ -150,11 +149,11 @@ namespace Aicl.Coral.UserLogin
 
 		void ExecuteModule(Item item)
 		{
+			WorkArea.Empty();
 			ContenedorItemArea.Hide();
 			ContenedorWorkArea.Show();
 			TituloModulo.InnerHTML=item.Titulo.Replace("<br>","");
 			ExecuteModule (WorkArea.Element (), item.Modulo.Replace(".",""));
-
 		}
 	}
 }
