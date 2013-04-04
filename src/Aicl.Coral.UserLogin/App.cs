@@ -83,7 +83,7 @@ namespace Aicl.Coral.UserLogin
 														});
 														rq.Fail(cb=>{
 															Cayita.Javascript.Firebug.Console.Log("fallo al cargar "+ item.Modulo+" :" + rq.StatusText + " " , rq); 
-															Bootbox.Alert("fallo al cargar "+ item.Modulo+" :" + rq.StatusText);
+															Bootbox.Error("fallo al cargar "+ item.Modulo+" :" + rq.StatusText);
 														});
 													}
 
