@@ -3,19 +3,22 @@ using System.Html;
 using Cayita.Javascript;
 using System.Runtime.CompilerServices;
 
-namespace Administracion
+namespace Aicl.Coral.Empresas
 {
 	[IgnoreNamespace]
 	[ScriptName("AdministracionEmpresas")]
-	public class Empresas
+	public class Controlador
 	{
-		public Empresas ()
+		public Controlador ()
 		{
 		}
 
 		public static void Execute(Element parent)
 		{
-			Document.CreateElement ("h2").Text ("Default styles").AppendTo (parent);
+			//Document.CreateElement ("h2").Text ("Default styles").AppendTo (parent);
+			var eg= new  EmpresasGrid (parent);
+
+
 		}
 	}
 

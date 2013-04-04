@@ -104,6 +104,7 @@ namespace Aicl.Coral.UserLogin
 					
 					ContenedorItemArea= new Div(row,  div=>{
 						div.ClassName="span10";
+						div.Style.MarginLeft="10px";
 						div.Append("<style>img {height: 60px;}  .c-icon {height: 160px;}</style>");
 						ItemArea= new Div(div, i=>{
 							i.ClassName="c-icons";
@@ -115,6 +116,7 @@ namespace Aicl.Coral.UserLogin
 
 					ContenedorWorkArea = new Div(row, div=>{
 						div.ClassName="span10";
+						div.Style.MarginLeft="10px";
 						div.Hide();
 						new Div(div, i=>{
 							i.ClassName="c-panel";

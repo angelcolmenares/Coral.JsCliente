@@ -35,9 +35,11 @@
     <ConsolePause>False</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
     <Reference Include="mscorlib">
       <HintPath>..\..\lib\mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Cayita.Javascript">
+      <HintPath>..\..\lib\Cayita.Javascript.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -49,6 +51,7 @@
     <Compile Include="Item.cs" />
     <Compile Include="SucursalAutorizada.cs" />
     <Compile Include="UserLogin.cs" />
+    <Compile Include="AppStore.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

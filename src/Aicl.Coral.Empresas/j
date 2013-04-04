@@ -9,7 +9,8 @@
 "/r:../../lib/Cayita.Javascript.dll" \
 "/r:../../lib/Aicl.Coral.JsCliente.Modelos.dll" \
 /t:library \
-"Empresas.cs" \
+"Controlador.cs" \
+"Grid.cs" \
 
 
 cp bin/Debug/Administracion.Empresas.js ../../../Servidor/src/Aicl.Coral.HostWeb/modulos/

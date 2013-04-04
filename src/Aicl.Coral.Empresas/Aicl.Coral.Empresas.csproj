@@ -9,7 +9,6 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Aicl.Coral.Administracion</RootNamespace>
     <AssemblyName>Aicl.Coral.Empresas</AssemblyName>
-    <Description />
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -37,7 +36,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="Empresas.cs" />
+    <Compile Include="Controlador.cs" />
+    <Compile Include="Grid.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

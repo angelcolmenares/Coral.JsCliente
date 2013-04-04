@@ -3,7 +3,12 @@
 "/define:SALTARELLE" \
 "/debug" \
 "/r:../../lib/mscorlib.dll" \
+"/r:../../lib/Saltarelle.Web.dll" \
+"/r:../../lib/Saltarelle.Linq.dll" \
+"/r:../../lib/Saltarelle.jQuery.dll" \
+"/r:../../lib/Cayita.Javascript.dll" \
 /t:library \
+"AppStore.cs" \
 "Empresa.cs" \
 "EmpresaCcf.cs" \
 "Administradora.cs" \
