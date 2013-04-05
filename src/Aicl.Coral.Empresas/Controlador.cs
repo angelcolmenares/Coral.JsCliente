@@ -2,6 +2,7 @@ using System;
 using System.Html;
 using Cayita.Javascript;
 using System.Runtime.CompilerServices;
+using Aicl.Coral.Modelos;
 
 namespace Aicl.Coral.Empresas
 {
@@ -15,8 +16,9 @@ namespace Aicl.Coral.Empresas
 
 		public static void Execute(Element parent)
 		{
-			//Document.CreateElement ("h2").Text ("Default styles").AppendTo (parent);
-			var eg= new  EmpresasGrid (parent);
+			var store = Factory<Empresa>.GetStore ();
+			new  EmpresasGrid (parent, store);
+			store.Read ();
 
 
 		}

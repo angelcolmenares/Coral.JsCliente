@@ -12,19 +12,16 @@ namespace Aicl.Coral.Empresas
 	[ScriptName("EmpresasGrid")]
 	public class EmpresasGrid:HtmlGrid<Empresa>
 	{
-		AppStore<Empresa> store;
+		AppStore<Empresa> store_;
 
-		public  EmpresasGrid (Element parent)
-			:base(null, Factory<Empresa>.GetStore(), DefineColumns())
+		public  EmpresasGrid (Element parent, AppStore<Empresa> store)
+			:base(parent,  store, DefineColumns())
 		{
-			base.GetStore ().Read ();
-			AppendTo(parent);
-			store = Factory<Empresa>.GetStore ();
-
+			store_ = store;
 		}
 
 		public new  AppStore<Empresa> GetStore(){
-			return store;
+			return store_;
 		}
 
 		static List<TableColumn<Empresa>> DefineColumns()
