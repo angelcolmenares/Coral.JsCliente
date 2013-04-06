@@ -9,6 +9,7 @@
 "/r:../../lib/Cayita.Javascript.dll" \
 /t:library \
 "AppStore.cs" \
+"AppGrid.cs" \
 "Empresa.cs" \
 "EmpresaCcf.cs" \
 "Administradora.cs" \
